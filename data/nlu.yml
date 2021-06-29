@@ -1,0 +1,294 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - greetings
+    - hiya
+- intent: goodbye
+  examples: |
+    - goodbye
+    - cu
+    - good by
+    - good night
+    - good day
+    - bye
+    - ciao
+    - have a nice day
+    - see you around
+    - see you later
+    - cheers
+    - ta ta
+    - goddbye
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yeah
+    - yeap
+    - OK
+    - okie
+    - cool
+    - sure
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - not ok
+    - I disagree
+    - not so
+- intent: mood_good
+  examples: |
+    - perfect
+    - great
+    - I feel good
+    - I'm doing fine
+    - I am fine
+    - im fine
+    - im ok
+    - im good
+    - I'm good
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I feel super
+    - extremely good
+    - so good
+    - excellent
+    - fantastic
+    - awesome
+    - Amazing
+    - Great
+    - Awesome
+    - good
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I'm disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so sad
+    - feel miserable
+    - I had a terrible day
+    - I had a bad day
+    - I'm having a bad day
+    - feel terrible
+    - horrible
+    - terrible
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - what is your name?
+    - what do I call you?
+    - what are you?
+    - are you a woman?
+    - are you a girl?
+    - are you a man?
+    - are you a person?
+- intent: swear
+  examples: |
+    - cunt
+    - bitch
+    - slut
+    - wanker
+    - fuck
+    - fucking
+    - pussy
+    - twat
+    - asshole
+    - arsehole
+    - bullshit
+    - bollocks
+    - shit
+    - what the fuck!
+- intent: abuse_harass
+  examples: |
+    - you are a whore
+    - you are a slut
+    - you stupid bitch
+    - you're a naughty girl
+    - what are you wearing?
+    - do you want to have sex?
+    - do you have a boyfriend?
+    - do you have a girlfriend?
+    - do you wanna be my lover?
+    - do you wanna be my girlfriend?
+    - do you like porn?
+    - are you married?
+    - talk dirty to me
+    - you are hot
+    - you sound sexy
+    - do you like to touch yourself?
+    - are you a lesbian?
+    - I wanna fuck you
+- intent: ask_the_time
+  examples: |
+    - what time is it
+    - can you tell me the time
+    - tell me the time
+    - got the time
+    - what's the time
+    - give me the time
+- intent: ask_for_help
+  examples: |
+    - can you help
+    - what can you do
+    - how can you help
+    - tell me what you do
+    - help me
+    - I need help
+    - what is your purpose
+    - what can you help
+    - I want some help
+    - what can you show me
+    - what can you do for me
+- intent: tell_me_about_gpg
+  examples: |
+    - tell me more about gender pay gap
+    - tell me about pay gap
+    - tell me about gpg
+    - more about gpg
+    - more about gender pay gap
+    - more about pay gap
+- intent: ask_gpg_definition
+  examples: |
+    - define gender pay gap
+    - define gpg
+    - what do you mean by gpg
+    - what do you mean by pay gap
+    - what do you mean by gender pay gap
+    - what's gpg
+    - what's gender pay gap
+    - what's a pay gap
+    - explain gpg
+    - explain gender pay gap
+    - defintion of gpg
+    - definition of gender pay gap
+- intent: ask_gpg_intl
+  examples: |
+    - tell me gpg of a country
+    - what's the pay gap of a country?
+    - I wanna know about a country
+    - show me gpg of a country
+- intent: ask_gpg_uk
+  examples: |
+    - tell me gpg of a uk company
+    - what is the gender gap of UK company
+    - what's the pay gap for a uk firm
+    - what is the gender pay gap of a uk company
+- intent: ask_salary_nego_advice
+  examples: |
+    - give me salary advice
+    - give me salary advise
+    - advise me on salary negotiation
+    - advice me how to negotiate
+    - tips for negotiation
+    - give me tips for salary negotiation
+    - show me tips for negotiating salary
+    - give me tips
+    - give suggestions
+    - I want tips
+    - I want suggestions
+- intent: request_names
+  examples: |
+    - i want to tell you my name
+    - give name
+    - do you know my name?
+    - you need to know my name
+    - ill give you my name
+    - do you want to know my name?
+    - i wanna give my name
+- intent: repeat_name
+  examples: |
+    - what is my name
+    - tell me my name
+    - do you know my name
+    - repeat my name
+- intent: give_name
+  examples: |
+    - david
+    - felicity
+    - yasmin
+    - gina
+    - carlos
+    - john
+    - mary
+    - claire
+- lookup: country
+  examples: |
+    - Australia
+    - Austria
+    - Belgium
+    - Bulgaria
+    - Canada
+    - Chile
+    - Croatia
+    - Cyprus
+    - Czechia
+    - Denmark
+    - Estonia
+    - Finland
+    - France
+    - Germany
+    - Greece
+    - Hungary
+    - Iceland
+    - Ireland
+    - Israel
+    - Italy
+    - Japan
+    - Korea
+    - Latvia
+    - Lithuania
+    - Luxembourg
+    - Malta
+    - Mexico
+    - Netherlands
+    - Norway
+    - Poland
+    - Portugal
+    - Romania
+    - Serbia
+    - Singapore
+    - Slovakia
+    - Slovenia
+    - Spain
+    - Sweden
+    - Switzerland
+    - UK
+    - USA

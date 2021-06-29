@@ -1,0 +1,91 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Explain 'I'm a chatbot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Complain when user inputs swear words
+  steps:
+  - intent: swear
+  - action: utter_swear_response
+
+- rule: Self-defence when abused or harassed by the user
+  steps:
+  - intent: abuse_harass
+  - action: utter_abuse_response
+
+- rule: Show options when user asks for help
+  steps:
+  - intent: ask_for_help
+  - action: utter_ask_how_to_help
+
+- rule: Show gpg options when user wants to follow gpg path
+  steps:
+  - intent: tell_me_about_gpg
+  - action: utter_what_to_tell_gpg
+
+- rule: Show definition of gender pay gap when user asks for it
+  steps:
+  - intent: ask_gpg_definition
+  - action: utter_gpg_definition
+
+#Rules for handling forms
+# Asking user for name
+- rule: Activate name form
+  steps:
+  - intent: request_names
+  - action: name_form
+  - active_loop: name_form
+
+- rule: Submit name form
+  condition:
+  - active_loop: name_form
+  steps:
+  - action: name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values
+
+# GPG Int'l asking for country
+- rule: Activate country form
+  steps:
+  - intent: ask_gpg_intl
+  - action: country_form
+  - active_loop: country_form
+
+- rule: Submit country form
+  condition:
+  - active_loop: country_form
+  steps:
+  - action: country_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_get_gpg_intl
+
+# GPG UK asking for company
+- rule: Activate company form
+  steps:
+  - intent: ask_gpg_uk
+  - action: company_form
+  - active_loop: company_form
+
+- rule: Submit company form
+  condition:
+  - active_loop: company_form
+  steps:
+  - action: company_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_get_gpg_uk

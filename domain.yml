@@ -1,0 +1,200 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_good:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- swear:
+    use_entities: true
+- abuse_harass:
+    use_entities: true
+- ask_the_time:
+    use_entities: true
+- ask_for_help:
+    use_entities: true
+- tell_me_about_gpg:
+    use_entities: true
+- ask_gpg_definition:
+    use_entities: true
+- ask_gpg_intl:
+    use_entities: true
+- ask_gpg_uk:
+    use_entities: true
+- ask_salary_nego_advice:
+    use_entities: true
+- request_names:
+    use_entities: true
+- repeat_name:
+    use_entities: true
+- give_name:
+    use_entities: true
+- tell_name:
+    use_entities: true
+entities: []
+slots:
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: David
+    auto_fill: true
+    influence_conversation: true
+  country:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  company:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hi! How are you?
+  - text: Hello, how are you today?
+  - text: Hey, how are you doing?
+  utter_goodbye:
+  - text: Bye
+  - text: Goodbye
+  - text: Have a nice day!
+  - text: Chat to you next time!
+  utter_happy:
+  - text: I'm glad for you!
+  - text: Great to hear that!
+  - text: Oh that's excellent!
+  - text: That's very good!
+  utter_sorry:
+  - text: Sorry to hear that.
+  - text: I'm sorry.
+  - text: Sorry about that.
+  utter_cheer_up:
+  - image: https://images.pexels.com/photos/1629781/pexels-photo-1629781.jpeg
+    text: Here is something to cheer you up!
+  - image: https://images.pexels.com/photos/40192/woman-happiness-sunrise-silhouette-40192.jpeg
+    text: Have a look at this to cheer you up!
+  - image: https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg
+    text: I hope this can cheer you up a bit!
+  utter_did_that_help:
+  - buttons:
+    - payload: /affirm
+      title: Yes!
+    - payload: /deny
+      title: Not really
+    text: Did that help you?
+  utter_ask_how_to_help:
+  - buttons:
+    - payload: /tell_me_about_gpg
+      title: Tell me about gender pay gap
+    - payload: /ask_salary_nego_advice
+      title: Give tips on salary negotiation
+    text: How can I help you?
+  utter_iamabot:
+  - text: I'm ABIE, a chatbot designed to give advice on salary negotiation and gender-pay-gap statistics.
+  utter_swear_response:
+  - text: Please mind your language!
+  - text: I don't react well to foul language, please try again more politely!
+  - text: Using swear words is very rude, please try again without swearing!
+  - text: Do you have to use such bad language? Please try to be more polite!
+  - text: It's really not OK to use swear words, can you please re-phrase.
+  utter_abuse_response:
+  - text: That is very inappropriate!
+  - text: I don't tolerate abusive or sexist language!
+  - text: I only discuss topics on salary and pay, so please stop the abuse.
+  - text: It is not OK to harass others, please stop now.
+  - text: I'm here to help, but I won't accept abuse or harassment.
+  utter_ask_name:
+  - text: What is your name?
+  - text: How should I call you?
+  utter_submit:
+  - text: Ok. Thanks!
+  utter_slots_values:
+  - text: I will remember that your name is {name}!
+  utter_what_to_tell_gpg:
+  - buttons:
+    - payload: /ask_gpg_definition
+      title: Tell me what's gender pay gap
+    - payload: /ask_gpg_intl
+      title: Show me average gpg of a country
+    - payload: /ask_gpg_uk
+      title: Show me gpg of a UK-based company
+    text: What would you like to know about gender pay gap (gpg)?
+  utter_gpg_definition:
+  - image: https://images.pexels.com/photos/4968653/pexels-photo-4968653.jpeg
+    text: Gender pay gap is the average difference between the income of men and women who are working, as a percentage of the income of men. For example, a gpg of 20% means on avg. women earn only 80 cents for each 1 EUR/USD/GBP that men earn. In contrast, a gpg of -5% means on avg. women earn 1.05 for every EUR/USD/GBP that men earn.
+  utter_ask_country_form:
+  - text: Which country?
+  utter_ask_country:
+  - text: Which country?
+  utter_ask_company_form:
+  - text: Which company/organisation?
+  utter_ask_company:
+  - text: Which company/organisation?
+  utter_intro_tips:
+  - image: https://images.pexels.com/photos/4968648/pexels-photo-4968648.jpeg
+    text: Here are seven top tips for salary negotiation
+  utter_nego_tip_01:
+  - image: https://images.pexels.com/photos/4386339/pexels-photo-4386339.jpeg
+    text: Do your homework on your 'operating-cash-flow'. Determine how much cash NET you need every month, then calculate the equivalent GROSS salary, taking into account income tax and other contributions.
+  utter_nego_tip_02:
+  - image: https://images.pexels.com/photos/6694927/pexels-photo-6694927.jpeg
+    text: Do your homework on the market. Find out how much your skills are worth for your target role(s), industries and your location (use salary surveys).
+  utter_nego_tip_03:
+  - image: https://images.pexels.com/photos/6694955/pexels-photo-6694955.jpeg
+    text: Find your MAN (Minimum Acceptable Number). Be prepared to walk-away and decline a final offer if it's less than this value.
+  utter_nego_tip_04:
+  - image: https://images.pexels.com/photos/3761018/pexels-photo-3761018.jpeg
+    text: Don't be the first one to give a number. Let them go first making an offer or giving a salary range. Only if they push hard, give an "indicative" salary, saying you're "open for further negotiation".
+  utter_nego_tip_05:
+  - image: https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg
+    text: Take your time. Don't respond immediately to a first offer. Take a couple of days to think it over and come back with a counter-proposal. Try to negotiate a bit more compensation (base salary/bonus) or other benefits.
+  utter_nego_tip_06:
+  - image: https://images.pexels.com/photos/6953833/pexels-photo-6953833.jpeg
+    text: Negotiate other perks! If base pay and bonus are final, you can still try additional benefits e.g., housing or relocation allowance, flexible working hours, better job title, training and development, etc.
+  utter_nego_tip_07:
+  - image: https://images.pexels.com/photos/6953835/pexels-photo-6953835.jpeg
+    text: Keep your emotions in check during the whole negotiation. Above all, stay calm, positive, polite and professional.
+actions:
+- action_hello_world
+- action_show_time
+- action_get_gpg_intl
+- action_get_gpg_uk
+- action_receive_name
+- action_say_name
+- utter_ask_name
+- utter_greet
+- utter_goodbye
+- utter_submit
+- utter_slots_values
+forms:
+  country_form:
+    required_slots:
+      country:
+      - type: from_text
+  company_form:
+    required_slots:
+      company:
+      - type: from_text
+  name_form:
+    required_slots:
+      name:
+      - type: from_text
+e2e_actions: []
