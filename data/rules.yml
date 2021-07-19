@@ -2,9 +2,22 @@ version: "2.0"
 
 rules:
 
+- rule: NLU Fallback rule
+  steps:
+  - intent: nlu_fallback
+  - action: utter_ask_rephrase
+  # This section for two-stage fall back
+  #- action: action_two_stage_fallback
+  #- active_loop: action_two_stage_fallback
+
+- rule: Say hello when user says Hello
+  steps:
+  - intent: say_hello
+  - action: utter_greet
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
-  - intent: goodbye
+  - intent: say_bye
   - action: utter_goodbye
 
 - rule: Explain 'I'm a chatbot' anytime the user challenges
@@ -36,6 +49,46 @@ rules:
   steps:
   - intent: ask_gpg_definition
   - action: utter_gpg_definition
+  - action: utter_what_next
+
+- rule: Introduce Salary Negotiation Tips
+  steps:
+  - intent: ask_salary_nego_advice
+  - action: utter_intro_tips
+
+- rule: respond to Salary Negotiation Questions
+  steps:
+  - intent: salaryQnA
+  - action: utter_salaryQnA
+
+- rule: Show resources for operating cash flow
+  steps:
+  - intent: ask_OCF_resources
+  - action: utter_OCF_resources
+#- rule: Show resources for operating cash flow part 2 (dynamic links)
+#  steps:
+#  - intent: ask_OCF_resources
+#  - action: action_hello_world
+
+- rule: Show resources for salary surveys
+  steps:
+  - intent: ask_salary_resources
+  - action: utter_salary_resources
+
+- rule: Show details for MAN
+  steps:
+  - intent: ask_MAN_details
+  - action: utter_MAN_details
+
+- rule: Show examples of negotiable perks
+  steps:
+  - intent: ask_perk_examples
+  - action: utter_perk_examples
+
+- rule: Give the current time when user asks for it
+  steps:
+  - intent: ask_the_time
+  - action: action_show_time
 
 #Rules for handling forms
 # Asking user for name
@@ -72,6 +125,8 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_get_gpg_intl
+  #- action: utter_what_next
+  - action: utter_country_again
 
 # GPG UK asking for company
 - rule: Activate company form
@@ -89,3 +144,5 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_get_gpg_uk
+  #- action: utter_what_next
+  - action: utter_company_again

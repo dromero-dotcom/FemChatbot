@@ -4,17 +4,17 @@ stories:
 
 - story: happy path
   steps:
-  - intent: greet
+  - intent: say_hello
   - action: utter_greet
-  - intent: mood_good
+  - intent: feeling_good
   - action: utter_happy
   - action: utter_ask_how_to_help
 
 - story: sad path 1
   steps:
-  - intent: greet
+  - intent: say_hello
   - action: utter_greet
-  - intent: mood_unhappy
+  - intent: feeling_unhappy
   - action: utter_sorry
   - action: utter_cheer_up
   - action: utter_did_that_help
@@ -24,9 +24,9 @@ stories:
 
 - story: sad path 2
   steps:
-  - intent: greet
+  - intent: say_hello
   - action: utter_greet
-  - intent: mood_unhappy
+  - intent: feeling_unhappy
   - action: utter_sorry
   - action: utter_cheer_up
   - action: utter_did_that_help
@@ -34,16 +34,9 @@ stories:
   - action: utter_sorry
   - action: utter_ask_how_to_help
 
-- story: ask me the time
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_the_time
-  - action: action_show_time
-
 - story: get user name
   steps:
-  - intent: greet
+  - intent: say_hello
   - action: utter_greet
   - intent: tell_name
   - action: utter_ask_name
@@ -52,31 +45,31 @@ stories:
   - intent: repeat_name
   - action: action_say_name
 
-- story: ask for salary negotiation tips
-  steps:
-  - intent: ask_salary_nego_advice
-  - action: utter_intro_tips
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_nego_tip_01
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_nego_tip_02
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_nego_tip_03
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_nego_tip_04
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_nego_tip_05
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_nego_tip_06
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_nego_tip_07
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: action_hello_world
+#- story: ask for salary negotiation tips
+#  steps:
+#  - intent: ask_salary_nego_advice
+#  - action: utter_intro_tips
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_nego_tip_01
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_nego_tip_02
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_nego_tip_03
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_nego_tip_04
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_nego_tip_05
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_nego_tip_06
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_nego_tip_07
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_happy

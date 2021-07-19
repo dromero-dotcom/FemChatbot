@@ -1,24 +1,160 @@
 version: "2.0"
 nlu:
-- intent: greet
+- intent: say_hello
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
+    - Bom dia
+    - Bonjour
+    - buenos dias
+    - Good Morning
+    - Good morning
+    - Good mourning
+    - Guten Morgen
     - good morning
     - good evening
-    - hey there
-    - let's go
+    - Good Evening
     - goodmorning
     - goodevening
     - good afternoon
+    - Good Afternoon
     - greetings
+    - HELLO
+    - HEY
+    - hey
+    - HEllo
+    - HI
+    - HI bot
+    - hi bot
+    - Hallo
+    - Hei
+    - Hellllooooooo
+    - Hello
+    - Hello Bot
+    - Hello!
+    - Hey
+    - Hey bot
+    - Heya
+    - Heylo
+    - Hi
+    - Hi bot
+    - Hi man
+    - Hi there
+    - Hi!
+    - Hi'
+    - Hi,
+    - Hi, bot
+    - Hieee
+    - Hieeeeeeeeeeeee
+    - Hola
+    - hola
+    - I said, helllllloooooO!!!!
+    - Well hello there ;)
+    - What is up?
+    - Whats up
+    - Whats up my bot
+    - Whats up?
+    - ayyyy whaddup
+    - bonjour
+    - ey boss
+    - good evening
+    - good moring
+    - good morning
+    - greet
+    - hai
+    - hallo
+    - halloo
+    - halloooo
+    - halo
+    - heeey
+    - helleo
+    - heelio
+    - hell9o
+    - hellio
+    - hello
+    - hello ABIE
+    - hi ABIE
+    - HI ABIE
+    - hello abie
+    - hi abie
+    - hello everybody
+    - hello friend
+    - hello hi
+    - hello is anybody there
+    - hello it is me again
+    - hello robot
+    - hello sweatheart
+    - hello sweet boy
+    - hello there
+    - hello world
+    - hello?
+    - hello]
+    - hellooo
+    - helloooo
+    - helo
+    - hey
+    - hey bot
+    - hey bot!
+    - hey dude
+    - hey hey
+    - hey let's talk
+    - hey ABIE
+    - hey abie
+    - hey ther
+    - hey there
+    - hey there boy
+    - hey there..
+    - hey, let's talk
+    - hey, abie!
+    - heya
+    - heyho
+    - heyo
+    - hhola
+    - hi
+    - hi !
+    - hi Mister
+    - hi again
+    - hi can you speak ?
+    - hi folks
+    - hi friend
+    - hi friends
+    - hi hi
+    - hi mrs ABIE
+    - hi pal!
+    - hi there
+    - hi there it's me
+    - hi!
+    - hi.........................................................
+    - hi?
+    - hieee
+    - hii
+    - hiihihi
+    - hiii
     - hiya
-- intent: goodbye
+    - hlo
+    - hola
+    - howdy
+    - jojojo
+    - jop
+    - konichiwa
+    - let's go
+    - merhaba
+    - ola abie
+    - ABIE hello
+    - salut
+    - sup
+    - wasssup
+    - wasssup!
+    - what up
+    - whats popping
+    - whats up
+    - what's up
+    - yo
+    - yoo
+    - ssup?
+
+- intent: say_bye
   examples: |
     - goodbye
-    - cu
+    - cu later
     - good by
     - good night
     - good day
@@ -30,20 +166,112 @@ nlu:
     - cheers
     - ta ta
     - goddbye
+    - Bye
+    - Bye bye
+    - adios
+    - adios?
+    - bye
+    - bye .
+    - bye :P
+    - bye bot
+    - bye bye
+    - bye bye bot
+    - bye for now
+    - bye udo
+    - bye was nice talking to you
+    - bye!
+    - byee
+    - catch you later
+    - ciao
+    - cya
+    - farewell
+    - good bye
+    - good bye rasa bot!
+    - good night
+    - goodbye
+    - goodbye.
+    - goodnight
+    - gotta go
+    - k byyye #slay
+    - ok Bye
+    - ok bye
+    - ok, bye
+    - ok.bye
+    - see u later
+    - see ya
+    - see you
+    - see you . bye
+    - take care
+    - then bye
+    - tlak to you later
+    - talk to you later
+    - talk to u later
+    - chat another time
+    - toodle-oo
+    - Exit
+    - Close this talk
+    - byr
+    - quit
+    - Quit
+    - end this
+    - End the chat
+    - I wanna finish
+    - I want to end this
+    - I wanna end
+    - I want to go
+    - I wanna go
+
 - intent: affirm
   examples: |
     - yes
     - y
+    - Y
+    - YES
+    - YUP
+    - Yea
+    - Yeah
+    - Yeah sure
+    - Yep
+    - Yep that's fine
+    - Yep!
+    - Yepp
+    - Yes
+    - Yes I do
+    - Yes please
+    - Yes please!
+    - Yes, I accept
+    - Yes.
+    - Yup
+    - yeah
+    - yeap
+    - yep
     - indeed
     - of course
     - that sounds good
     - correct
-    - yeah
-    - yeap
     - OK
     - okie
+    - okay
+    - okay cool
+    - okay sure
+    - okay..
+    - oki doki
+    - okie doki
+    - ook
+    - oui
+    - si
+    - uh-huh
     - cool
+    - Cool
+    - kool
     - sure
+    - SURE
+    - Sure
+    - sure thing
+    - sweet
+    - that would be great
+    - that'd be great
+
 - intent: deny
   examples: |
     - no
@@ -54,48 +282,162 @@ nlu:
     - no way
     - not really
     - nope
+    - NOPE
     - not ok
     - I disagree
     - not so
-- intent: mood_good
+    - No
+    - No thank you
+    - No, not really.
+    - No, thank you
+    - No.
+    - Nopes
+    - Not really
+    - absolutely not
+    - decline
+    - definitely not
+    - deny
+    - i decline
+    - i don't think so
+    - i don't want either of those
+    - i don't want to
+    - i dont want to
+    - i dun wanna
+    - i dun want
+    - i dont want to accept
+    - i guess it means - no
+    - i'm afraid not
+    - i'm not sure
+    - it is going pretty badly
+    - it sucks
+    - it sux
+    - na
+    - nah
+    - nah I'm good
+    - nah not for me
+    - nah, first time
+    - nah, i'm good
+    - nehi
+    - nein
+    - neither
+    - never
+    - never mind
+    - no
+    - no :(
+    - no I dont want
+    - no I haven't decided yet if I want to sign up
+    - no and no again
+    - no bots at all
+    - no go
+    - no i can't
+    - no i don't accept
+    - no i dont want to
+    - no i dont want to accept
+    - no i won't
+    - no ma'am
+    - no sir
+    - no sorry
+    - no thank s
+    - no thank you
+    - no thanks
+    - no way
+    - no you did it wrong
+    - no!!!!
+    - no, i hate it
+    - no, my first time
+    - no, thank you
+    - no, thanks
+    - no, thankyou
+    - no. u r idiot
+    - non
+    - noooooooooo
+    - noooooooooooooooooooooooooooooooooooooooo
+    - nop
+    - nope!
+    - nope. i am good
+    - not going well at all
+    - not really
+    - not right now
+    - not yet
+    - nö
+    - sorry not right now
+    - still dont want to tell
+    - thanks but no thanks
+    - no stop
+    - stop it, i do not care!!!
+    - none of them
+    - I don't agree
+
+- intent: feeling_good
   examples: |
-    - perfect
+    - amazing
+    - Amazing
+    - Awesome
+    - awesome
+    - extremely good
+    - excellent
+    - fantastic
+    - feeling like a king
+    - feeling good
+    - feeling great
+    - feeling amazing
+    - feeling awesome
+    - feeling ok
+    - feeling OK
+    - Great
     - great
+    - good
+    - GOOD
+    - Good
+    - happy
+    - Happy
+    - HAPPY
+    - happy!!
+    - happy today
     - I feel good
     - I'm doing fine
     - I am fine
     - im fine
+    - i'm fine
     - im ok
+    - I'm OK
+    - I'm doing ok
+    - im doin ok
+    - I'm ok
     - im good
     - I'm good
-    - amazing
-    - feeling like a king
-    - wonderful
     - I am feeling very good
     - I am great
+    - I am happy
+    - i am feeling happy
+    - i am happy
+    - i am happy today
+    - i'm happy
+    - I feel great
+    - I feel good
+    - I feel awesome
     - I am amazing
     - I feel super
-    - extremely good
+    - not too bad
+    - perfect
+    - Perfect
+    - pretty good
+    - really good
     - so good
-    - excellent
-    - fantastic
-    - awesome
-    - Amazing
-    - Great
-    - Awesome
-    - good
-- intent: mood_unhappy
+    - wonderful
+
+- intent: feeling_unhappy
   examples: |
+    - awful
+    - Awful
+    - really awful
+    - boring
+    - bored
     - my day was horrible
-    - I am sad
     - I don't feel very well
     - I'm disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
     - unhappy
-    - not good
+    - Unhappy
     - not very good
     - extremely sad
     - so sad
@@ -103,44 +445,153 @@ nlu:
     - I had a terrible day
     - I had a bad day
     - I'm having a bad day
+    - I'm having an awful day
+    - I'm having a terrible day
     - feel terrible
     - horrible
     - terrible
+    - I am feeling bad
+    - I'm not feeling well
+    - not very well
+    - I am super sad
+    - I'm sad
+    - I am sad
+    - I'm so sad
+    - I'm very sad
+    - I'm super sad
+    - Now I'm sad
+    - bad
+    - i am angry
+    - i am feel sad
+    - i am sad
+    - i am sad about that
+    - i am very sad
+    - i feel sad
+    - i sad
+    - i'm sad
+    - rasa is bad
+    - sad
+    - SAD
+    - Sad
+    - so sad
+    - so sad :(
+    - super sad
+    - very sad
+    - very very sad
+    - you make me sad
+    - i dont like bots
+    - this is a really frustrating experience
+    - you're rather dull
+    - iam not feeling good
+    - not good
+    - really bad
+    - really terrible
+    - Thats so rude
+    - sadly
+
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
     - who are you?
     - what is your name?
+    - tell me your name
+    - tell me who you are
     - what do I call you?
     - what are you?
     - are you a woman?
     - are you a girl?
     - are you a man?
     - are you a person?
+    - Are you a bot
+    - Are you a chat bot?
+    - Are you the bot?
+    - Hi there, are you the bot?
+    - are you a BOT
+    - are you a Skynet
+    - are you a bot
+    - are you a bot ?
+    - are you a bot?
+    - are you a chatbot
+    - are you a chatbot?
+    - are you a robot
+    - are you ai
+    - are you artificial
+    - are you artificial intelligence
+    - are you bot
+    - are you bot?
+    - are you real
+    - are you real lol
+    - are you really a bot
+    - are you robot
+    - are you sure that you're a bot?
+    - bot?
+    - cuz you are a bot
+    - i guess you are a chatbot
+    - oh are you chatbot?
+    - tell me, are you a bot?
+    - what are you, a bot?
+    - you are a robot
+    - you are ai
+    - you are chatbot
+    - you're a bot
+    - you robo
+    - real bot then?
+    - are you really a bot?
+    - hey are you human
+    - are u human
+    - r u a human
+    - are you real human?
+    - you are a human
+    - Rara, are you a human?
+    - you are bot or human?
+    - are you human
+    - you are human or bot
+    - Are you human?
+    - are you a human ?
+    - are you a human?
+    - Are you human ?
+    - Are you a human being?
+    - are you a robot or human?
+    - r u real?
+    - are you a real person
+    - are u a real person?
+    - Are you a real person?
+    - are you a real person?
+    - are you real person or chatbot?
+    - are you human ?
+
 - intent: swear
   examples: |
-    - cunt
-    - bitch
-    - slut
-    - wanker
-    - fuck
-    - fucking
-    - pussy
-    - twat
-    - asshole
     - arsehole
-    - bullshit
+    - asshole
+    - bitch
     - bollocks
+    - bullshit
+    - cunt
+    - dipshit
+    - fuck
+    - fuck off
+    - fuckin
+    - fucking
+    - fucking asshole
+    - fucking moron
+    - moron
+    - pussy
     - shit
+    - slut
+    - twat
+    - wanker
     - what the fuck!
+    - whore
+
 - intent: abuse_harass
   examples: |
     - you are a whore
     - you are a slut
     - you stupid bitch
+    - you are an idiot
+    - you are an asshole
     - you're a naughty girl
     - what are you wearing?
     - do you want to have sex?
@@ -156,27 +607,220 @@ nlu:
     - do you like to touch yourself?
     - are you a lesbian?
     - I wanna fuck you
+    - stupid bitch
+    - stupid chatbot
+    - you're an idiot
+    - you bitch
+    - you whore
+    - you cunt
+    - you slut
+    - marry me
+    - do you wanna marry me
+    - I wanna have sex
+    - I want to have sex
+    - you're so sexy
+    - you sexy bot
+    - are you wearing any underwear
+    - are you wearing any knickers
+    - what color are your knickers
+    - I wanna marry you
+    - give me a kiss
+    - kiss me
+    - I want to touch you
+    - are you touching yourself
+    - touch yourself
+    - fucking bitch
+    - fuck you
+    - fuck you asshole
+    - are you a dyke?
+    - are you queer?
+    - are you homosexual?
+    - how often do you have sex?
+    - when was the last time you had sex?
+    - do you have sex with robots?
+    - are you gay?
+    - do you touch yourself?
+    - I'm horny
+    - I'm horny baby
+    - I'd like to see you naked
+    - Are you naked?
+    - I love watching porn
+    - I love to have sex
+    - I like porn movies
+
 - intent: ask_the_time
   examples: |
-    - what time is it
     - can you tell me the time
-    - tell me the time
-    - got the time
-    - what's the time
+    - Can you give me the time?
+    - Can you tell me the time?
+    - Can you tell me what time it is?
+    - Can you tell the time?
+    - Could you tell me the time, please?
+    - Could you tell me the time?
+    - Could you tell me what time is it?
+    - Do you have the time?
+    - Do you know the time?
+    - Do you know what time it is?
+    - Excuse me, what time is it?
+    - Give me the time.
     - give me the time
+    - got the time
+    - Hi, I need the time.
+    - I need to know what time it is.
+    - Pardon me, but do you know the time?
+    - Tell me the time.
+    - tell me the time
+    - Time, please!
+    - Time?
+    - What is the current time?
+    - What is the exact time?
+    - What is the hour and minute right now?
+    - What is the time?
+    - What might the time be?
+    - What time do we have?
+    - What time have we got?
+    - What time is it right now?
+    - What's the current time?
+    - What's the time right now?
+    - What's the time?
+    - Would you tell me what time it is?
+    - do you have the time?
+    - do you know the current time?
+    - tell me the current time.
+    - tell me the time it is.
+    - tell me the time.
+    - tell me what time you have.
+    - that's true. do you know what time it is?
+    - what is the current time?
+    - what is the time ?
+    - what is the time?
+    - what is the time
+    - what time do you have?
+    - what time is it
+    - what time is it?
+    - what time it is
+    - what's the time
+    - whats the time now
+
 - intent: ask_for_help
   examples: |
-    - can you help
-    - what can you do
+    - Can you help me?
+    - Could you please show me what you can
+    - Great, is there anything else you can do, bot?
+    - How can you help me
     - how can you help
-    - tell me what you do
-    - help me
+    - How you help me?
     - I need help
-    - what is your purpose
-    - what can you help
+    - I need some help
+    - I am stuck and I need help
+    - What are my options
+    - What are you able to do?
+    - What can I ask you?
+    - What can I do?
+    - What can you demo
+    - What can you do
+    - What can you do for me?
+    - What can you do?
+    - What can you tell me?
+    - What do you do
+    - anything els
+    - are there any other options?
+    - can I ask you anything else?
+    - can you do anything else?
+    - can you help
+    - can you help me
+    - can you help me?
+    - come back
+    - cool! can I do something else here?
+    - hello what can you do for me
+    - help
+    - Help
+    - HELP
+    - help!!
+    - HELP!
+    - help me
+    - help please
+    - help pls
+    - help?
+    - hep me
+    - hi. ABIE what do you do?
+    - hm that doesnt quite help me is there anything else you can do?
+    - how can i use you
+    - how can you help me
+    - how can you help me?
+    - how can you help?
+    - how does this work?
+    - how u can help me
+    - how you help me
+    - i asked you if you can do anything else
+    - i don't know what i want
+    - i need help
     - I want some help
-    - what can you show me
+    - more info
+    - now what?
+    - options
+    - show me the menu
+    - show menu again
+    - show me what's possible
+    - show me what yo do
+    - show me what you can do
+    - so now what
+    - so what can you do
+    - so what can you do?
+    - so what can you help me with?
+    - so what next?
+    - talk to me
+    - talk to me!
+    - tell me something you can do
+    - tell me what you do
+    - tell me what's your skill
+    - um what now
+    - what are all the things you understand?
+    - what are the options?
+    - what are you doing
+    - what are you good at?
+    - what can I ask ?
+    - what can I ask you?
+    - what can I do here
+    - what can I do here?
+    - what can I do with this bot
+    - what can i do here
+    - what can i do now
+    - what can u do
+    - what can you help
+    - what can we talk about?
+    - what can you answer
+    - what can you do
     - what can you do for me
+    - what can you do, ABIE?
+    - what can you do abie?
+    - what can you do?
+    - what can you offer me?
+    - what can you show me
+    - what can you tell me
+    - what can you?
+    - what cn u do for me ?
+    - what do you do
+    - what do you do?
+    - what do you know except this?
+    - what else can I do here?
+    - what else can i do
+    - what else can i do?
+    - what else can you do?
+    - what else can you help with?
+    - what is this bot for
+    - what u can do
+    - what u can do?
+    - what you can do
+    - what you can do for me?
+    - what can you do for me
+    - what you can do?
+    - what you do
+    - what you doing?
+    - what you can
+    - what is your purpose
+    - what is your function
+
 - intent: tell_me_about_gpg
   examples: |
     - tell me more about gender pay gap
@@ -185,6 +829,13 @@ nlu:
     - more about gpg
     - more about gender pay gap
     - more about pay gap
+    - show me gpg
+    - show gpg
+    - show gender pay gap
+    - go gender pay gap
+    - GPG
+    - gpg
+
 - intent: ask_gpg_definition
   examples: |
     - define gender pay gap
@@ -192,25 +843,60 @@ nlu:
     - what do you mean by gpg
     - what do you mean by pay gap
     - what do you mean by gender pay gap
+    - what do you mean gpg
+    - what does gpg mean
+    - what does gender pay gap mean
     - what's gpg
+    - what is gpg
+    - what's GPG
     - what's gender pay gap
     - what's a pay gap
     - explain gpg
     - explain gender pay gap
-    - defintion of gpg
+    - explain gender gap
+    - definition of gpg
     - definition of gender pay gap
+    - define pay gap
+    - define GPG
+
 - intent: ask_gpg_intl
   examples: |
     - tell me gpg of a country
     - what's the pay gap of a country?
     - I wanna know about a country
     - show me gpg of a country
+    - give country gpg
+    - give country gender pay gap
+    - give country pay gap
+    - country pay gap
+    - country gpg
+    - ctry gpg
+    - ctry GPG
+    - show country gpg
+    - show country
+    - show country pay gap
+    - tell me country gpg
+
 - intent: ask_gpg_uk
   examples: |
     - tell me gpg of a uk company
     - what is the gender gap of UK company
     - what's the pay gap for a uk firm
     - what is the gender pay gap of a uk company
+    - uk gpg
+    - UK GPG
+    - show me gpg in UK
+    - UK company
+    - UK companies
+    - UK employer
+    - UK firm
+    - show gpg uk
+    - show pay gap UK
+    - what's UK gpg
+    - tell gpg uk
+    - tell gpg company in UK
+    - tell gpg uk company
+
 - intent: ask_salary_nego_advice
   examples: |
     - give me salary advice
@@ -224,6 +910,139 @@ nlu:
     - give suggestions
     - I want tips
     - I want suggestions
+    - gimme advice
+    - give me tips
+    - I want tips
+    - I want advice
+    - I want advise
+    - show me tips
+    - show me salary advice
+    - what are the tips?
+    - what's the advice
+
+# Retrieval intents for the Salary Q&A
+- intent: salaryQnA/OCF
+  examples: |
+    - what is operating cash flow?
+    - what is operating cash flow
+    - what's OCF
+    - explain cash flow
+    - tell me about OCF
+    - my operating cash flow?
+    - explain OCF
+    - tell me about OCF
+    - what's op cash flow
+    - what do you mean OCF
+    - what do you mean cash flow
+    - what do you mean by cash flow
+    - tell me more about OCF
+    - define OCF
+    - define operating cash flow
+    - what's ocf
+    - what's operating cash
+    - OCF?
+    - OCF
+    - ocf
+
+- intent: salaryQnA/Benchmark
+  examples: |
+    - how do I benchmark?
+    - how can I benchmark
+    - how do I find what my skills are worth
+    - how can I find salary info
+    - what is a benchmark
+    - what is benchmarking
+    - what do you mean by benchmarking
+    - what do you mean find how much my skills are worth
+    - where can I find how much my skills are worth
+    - where can I find benchmark
+    - what do you mean by benchmark
+    - where can I find salary information
+    - where do I find salary surveys
+    - where can I find salary surveys
+    - where do I find what my skills are worth
+    - explain benchmark
+    - tell me about benchmark
+    - tell me more benchmarking
+    - tell me about salary surveys
+    - show me more on salary surveys
+    - show me more about benchmarking
+    - show me more about benchmark
+
+- intent: salaryQnA/MAN
+  examples: |
+    - what is MAN?
+    - what is minimum acceptable number
+    - what do you mean MAN
+    - what do you mean man
+    - explain MAN
+    - tell me more about MAN
+    - what's man?
+    - what's minimum acceptable number
+    - define MAN
+    - define man
+    - define minimum number
+    - what's MAN
+    - what's man
+    - What is MAN?
+    - What is minimum acceptable number?
+    - tell me about MAN
+    - tell me about man
+    - show me MAN
+    - minimum number
+    - min num?
+
+- intent: salaryQnA/dont_be_first
+  examples: |
+    - why not be the first?
+    - what do you mean dont be first
+    - why not first?
+    - why shouldn't be the first
+    - why shouldn't I be the first one
+    - explain don't be first to give a number
+    - explain don't be first
+    - tell me about don't be first
+    - explain not be the first
+    - why not the first?
+    - why not first
+    - why not fisrt
+    - so why not first?
+    - not first one?
+    - don't be first one to give a number
+    - dont be first one
+    - dun be first
+    - dont be first
+    - don't be 1st
+    - dont b 1st
+    - dont be 1st
+
+- intent: salaryQnA/negotiate_perks
+  examples: |
+    - explain perks
+    - explain about other perks
+    - describe other perks
+    - define other perks
+    - define negotiate other benefits
+    - How do I negotiate other perks
+    - how can I negotiate other perks
+    - more about perks
+    - negotiate perks
+    - other benefits
+    - tell me about perks
+    - tell me which perks
+    - tell me about other perks
+    - what other perks?
+    - what perks do you mean
+    - what do you mean by perks?
+    - what do you mean negotiate other
+    - what are perks?
+    - what else can I negotiate
+    - what else is there to negotiate
+    - what benefits can be negotiated
+    - what other benefits?
+    - show me about perks
+    - show me negotiate other perks
+
 - intent: request_names
   examples: |
     - i want to tell you my name
@@ -233,12 +1052,17 @@ nlu:
     - ill give you my name
     - do you want to know my name?
     - i wanna give my name
+    - I want to tell you my name
+
 - intent: repeat_name
   examples: |
     - what is my name
     - tell me my name
-    - do you know my name
+    - show you know my name
     - repeat my name
+    - say my name
+    - what's my name
+
 - intent: give_name
   examples: |
     - david
@@ -249,46 +1073,3 @@ nlu:
     - john
     - mary
     - claire
-- lookup: country
-  examples: |
-    - Australia
-    - Austria
-    - Belgium
-    - Bulgaria
-    - Canada
-    - Chile
-    - Croatia
-    - Cyprus
-    - Czechia
-    - Denmark
-    - Estonia
-    - Finland
-    - France
-    - Germany
-    - Greece
-    - Hungary
-    - Iceland
-    - Ireland
-    - Israel
-    - Italy
-    - Japan
-    - Korea
-    - Latvia
-    - Lithuania
-    - Luxembourg
-    - Malta
-    - Mexico
-    - Netherlands
-    - Norway
-    - Poland
-    - Portugal
-    - Romania
-    - Serbia
-    - Singapore
-    - Slovakia
-    - Slovenia
-    - Spain
-    - Sweden
-    - Switzerland
-    - UK
-    - USA

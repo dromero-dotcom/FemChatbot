@@ -5,17 +5,17 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: false
 intents:
-- greet:
+- say_hello:
     use_entities: true
-- goodbye:
+- say_bye:
     use_entities: true
 - affirm:
     use_entities: true
 - deny:
     use_entities: true
-- mood_good:
+- feeling_good:
     use_entities: true
-- mood_unhappy:
+- feeling_unhappy:
     use_entities: true
 - bot_challenge:
     use_entities: true
@@ -37,6 +37,16 @@ intents:
     use_entities: true
 - ask_salary_nego_advice:
     use_entities: true
+- salaryQnA:
+    use_entities: true
+- ask_OCF_resources:
+    use_entities: true
+- ask_salary_resources:
+    use_entities: true
+- ask_MAN_details:
+    use_entities: true
+- ask_perk_examples:
+    use_entities: true
 - request_names:
     use_entities: true
 - repeat_name:
@@ -45,7 +55,10 @@ intents:
     use_entities: true
 - tell_name:
     use_entities: true
-entities: []
+- nlu_fallback:
+    use_entities: true
+entities:
+- location
 slots:
   name:
     type: rasa.shared.core.slots.TextSlot
@@ -68,15 +81,26 @@ slots:
     auto_fill: true
     influence_conversation: false
 responses:
+  utter_ask_rephrase:
+  - text: Sorry, I didn't get that 🤷. Could you please rephrase?
+  - text: I didn't understand, could you rephrase that please?
+  - text: I'm sorry, but I didn't understand you. Could you please rephrase what you just said?
+  - text: I'm afraid I didn't get what you just said. Could you rephrase that?
+  - text: I didn't quite get that, could you rephrase your message?
+  - text: Could you rephrase your message? I didn't get it, I'm sorry.
+  - text: I'm sorry, I didn't quite understand that. Could you please rephrase?
+  utter_default:
+  - text: I'm very sorry, I can't help you with that 😞. Type "help" to see what I can do.
   utter_greet:
-  - text: Hi! How are you?
-  - text: Hello, how are you today?
-  - text: Hey, how are you doing?
+  - text: Hi, ABIE (chatbot) here! How are you?
+  - text: Hello, I'm a chatbot called ABIE, how are you today?
+  - text: Hey, this is ABIE (a chatbot). How are you doing?
   utter_goodbye:
-  - text: Bye
-  - text: Goodbye
+  - text: Bye bye!
+  - text: Goodbye and take care.
   - text: Have a nice day!
   - text: Chat to you next time!
+  - text: Nice talking to you, good day!
   utter_happy:
   - text: I'm glad for you!
   - text: Great to hear that!
@@ -91,7 +115,7 @@ responses:
     text: Here is something to cheer you up!
   - image: https://images.pexels.com/photos/40192/woman-happiness-sunrise-silhouette-40192.jpeg
     text: Have a look at this to cheer you up!
-  - image: https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg
+  - image: https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg
     text: I hope this can cheer you up a bit!
   utter_did_that_help:
   - buttons:
@@ -103,12 +127,26 @@ responses:
   utter_ask_how_to_help:
   - buttons:
     - payload: /tell_me_about_gpg
-      title: Tell me about gender pay gap
+      title: Tell me more about gender pay gap
     - payload: /ask_salary_nego_advice
       title: Give tips on salary negotiation
+    - payload: /say_bye
+      title: Say Goodbye
     text: How can I help you?
+  utter_what_next:
+  - buttons:
+    - payload: /tell_me_about_gpg
+      title: Tell me more about gender pay gap
+    - payload: /ask_salary_nego_advice
+      title: Give tips on salary negotiation
+    - payload: /say_bye
+      title: Say Goodbye
+    text: What would you like me to do next?
   utter_iamabot:
-  - text: I'm ABIE, a chatbot designed to give advice on salary negotiation and gender-pay-gap statistics.
+  - text: I'm ABIE, a chatbot 🤖 designed to give advice on salary negotiation and gender-pay-gap statistics.
+  - text: I'm a chatbot 🤖 called ABIE. I can give you some tips for salary negotiation and gender pay gap info.
+  - text: I am a chatbot 🤖, not a human. My name is ABIE.
+  - text: I'm not a human, I'm a bot! 🤖. They call me ABIE.
   utter_swear_response:
   - text: Please mind your language!
   - text: I don't react well to foul language, please try again more politely!
@@ -121,6 +159,8 @@ responses:
   - text: I only discuss topics on salary and pay, so please stop the abuse.
   - text: It is not OK to harass others, please stop now.
   - text: I'm here to help, but I won't accept abuse or harassment.
+  - text: That's not very nice 😢. Please be more respectful.
+  - text: Hey, that's not acceptable 😞. Please show more respect!
   utter_ask_name:
   - text: What is your name?
   - text: How should I call you?
@@ -131,7 +171,7 @@ responses:
   utter_what_to_tell_gpg:
   - buttons:
     - payload: /ask_gpg_definition
-      title: Tell me what's gender pay gap
+      title: Define what is gender pay gap (gpg)
     - payload: /ask_gpg_intl
       title: Show me average gpg of a country
     - payload: /ask_gpg_uk
@@ -144,13 +184,102 @@ responses:
   - text: Which country?
   utter_ask_country:
   - text: Which country?
+  utter_country_again:
+  - buttons:
+    - payload: /ask_gpg_intl
+      title: 👍 Sure!
+    - payload: /ask_for_help
+      title: 👎 No thanks.
+    text: Would you like to see another country?
   utter_ask_company_form:
   - text: Which company/organisation?
   utter_ask_company:
   - text: Which company/organisation?
+  utter_company_again:
+  - buttons:
+    - payload: /ask_gpg_uk
+      title: 👍 OK, yes.
+    - payload: /ask_for_help
+      title: 👎 No thanks
+    text: Would you like to check another company?
   utter_intro_tips:
-  - image: https://images.pexels.com/photos/4968648/pexels-photo-4968648.jpeg
-    text: Here are seven top tips for salary negotiation
+  - text: "Here are five top tips for salary negotiation: Find your own operating cash flow (OCF); Benchmark, find how much your skills are worth (salary surveys); Determine your Minimum Acceptable Number (MAN); Don't be the first to give a salary number; Negotiate other perks. I can give more details if you tell me which tip you are interested in..."
+  utter_salaryQnA/OCF:
+  - buttons:
+    - payload: /ask_OCF_resources
+      title: Yes please
+    - payload: /ask_salary_nego_advice
+      title: No thanks, show me the 5 tips again
+    - payload: /ask_for_help
+      title: No, I want something else
+    image: https://images.pexels.com/photos/4386339/pexels-photo-4386339.jpeg
+    text: Figure out your operating-cash-flow or OCF, this means determine how much cash NET you need every month. Then calculate the equivalent GROSS salary, taking into account income tax and other contributions. Would you like to see resources to help you?
+  utter_OCF_resources:
+  - buttons:
+    - payload: /ask_salary_nego_advice
+      title: Show the five tips again
+    - payload: /ask_for_help
+      title: Tell me what's available
+    text: 'These websites can help with tips and tools for personal budgeting: [MoneyHelper.org.uk](https://www.moneyhelper.org.uk/en/everyday-money/budgeting/budget-planner), [MoneySavingExpert.com](https://www.moneysavingexpert.com/banking/budget-planning/#bplanner), [Investopedia.com](https://www.investopedia.com/budgeting-and-savings-4427755). What would you like to see next?'
+  utter_salaryQnA/Benchmark:
+  - buttons:
+    - payload: /ask_salary_resources
+      title: Yes please
+    - payload: /ask_salary_nego_advice
+      title: No thanks, show me the 5 tips again
+    - payload: /ask_for_help
+      title: No, I want something else
+    image: https://images.pexels.com/photos/6694927/pexels-photo-6694927.jpeg
+    text: Do your homework on the market. Find out how much remuneration on average is on offer for your target role(s), industries and your location. You can use salary surveys from dedicated websites like Glassdoor or Payscale. Would you like more details?
+  utter_salary_resources:
+  - buttons:
+    - payload: /ask_salary_nego_advice
+      title: Display the 5 salary tips once more
+    - payload: /ask_for_help
+      title: Show the main options
+    text: 'These websites provide salary surveys for various roles and locations: [Glassdoor](https://www.glassdoor.co.uk/Salaries/index.htm), [Payscale](https://www.payscale.com/research/UK/Country=United_Kingdom/Salary), [Prospects](https://www.prospects.ac.uk/job-profiles). What shall I do for you now?'
+  utter_salaryQnA/MAN:
+  - buttons:
+    - payload: /ask_MAN_details
+      title: Yes please
+    - payload: /ask_salary_nego_advice
+      title: No thanks, show me the 5 tips again
+    - payload: /ask_for_help
+      title: No, I want something else
+    image: https://images.pexels.com/photos/6694955/pexels-photo-6694955.jpeg
+    text: Your MAN (Minimum Acceptable Number) is just the lowest salary offer you are happy to accept. Be prepared to walk-away and decline a final offer if it's less than this value. Would you like more details?
+  utter_MAN_details:
+  - buttons:
+    - payload: /ask_salary_nego_advice
+      title: Back to the five tips
+    - payload: /ask_for_help
+      title: Show available actions
+    text: 'To find your Minimum Acceptable Number, combined with your OCF you should also consider: your current salary, the range of salaries for your target job (see second tip about benchmarking), ask yourself how badly you need this job (scale from 1 to 10), ask yourself how badly they need you (scale 1 to 10), consider any pay rise coming soon in your current job (e.g. merit increase). Where should we go next?'
+  utter_salaryQnA/dont_be_first:
+  - buttons:
+    - payload: /ask_salary_nego_advice
+      title: Show the five tips again
+    - payload: /ask_for_help
+      title: Show what is available
+    image: https://images.pexels.com/photos/3761018/pexels-photo-3761018.jpeg
+    text: By not being the first to name a salary figure, you get more room to negotiate. Let the employer go first making an offer or giving a salary range. Only if they push hard, give an indicative salary, saying you're 'open for further negotiation'. What would you like to do next?
+  utter_salaryQnA/negotiate_perks:
+  - buttons:
+    - payload: /ask_perk_examples
+      title: Yes please
+    - payload: /ask_salary_nego_advice
+      title: No thanks, show me the 5 tips again
+    - payload: /ask_for_help
+      title: No, I want something else
+    image: https://images.pexels.com/photos/6953833/pexels-photo-6953833.jpeg
+    text: If base pay and bonus are final, you can still try negotiating additional perks or benefits e.g., flexible working hours or a better job title. Do you want to see more ideas for negotiable perks?
+  utter_perk_examples:
+  - buttons:
+    - payload: /ask_salary_nego_advice
+      title: Repeat the five tips
+    - payload: /ask_for_help
+      title: Show me what's available
+    text: 'Here are some ideas of additional benefits (perks) you might try to negotiate: flexible working hours, a better job title, sponsored language courses, job-relevant training courses (e.g. Project Management), child care options, wellness programs, reduced membership to fitness clubs/gyms, housing allowance, relocation support, transport reimbursment, employer discounts, etc. What can I show you now?'
   utter_nego_tip_01:
   - image: https://images.pexels.com/photos/4386339/pexels-photo-4386339.jpeg
     text: Do your homework on your 'operating-cash-flow'. Determine how much cash NET you need every month, then calculate the equivalent GROSS salary, taking into account income tax and other contributions.
@@ -172,8 +301,14 @@ responses:
   utter_nego_tip_07:
   - image: https://images.pexels.com/photos/6953835/pexels-photo-6953835.jpeg
     text: Keep your emotions in check during the whole negotiation. Above all, stay calm, positive, polite and professional.
+  utter_ask_docs_help:
+  - buttons:
+    - payload: /affirm
+      title: 👍
+    - payload: /deny
+      title: 👎
+    text: Did that help?
 actions:
-- action_hello_world
 - action_show_time
 - action_get_gpg_intl
 - action_get_gpg_uk
