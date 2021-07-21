@@ -161,6 +161,9 @@ responses:
   - text: I'm here to help, but I won't accept abuse or harassment.
   - text: That's not very nice 😢. Please be more respectful.
   - text: Hey, that's not acceptable 😞. Please show more respect!
+  - text: I'm not programmed to accept verbal abuse 😢, please stop!
+  - text: That's really unpleasant, can you please avoid this kind of abuse!
+  - text: Hey, I'm not OK with that 😞. I can't help you if you harass me!
   utter_ask_name:
   - text: What is your name?
   - text: How should I call you?
