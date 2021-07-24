@@ -1,8 +1,10 @@
 version: '3.4'
 services:
-  action_server:
+  app:
     image: 'rasa/rasa-sdk:latest'
     volumes:
-    - './actions:/app/actions'
+      - './actions:/app/actions'
     expose:
-    - '5055'
+      - '5055'
+    depends_on:
+      - rasa-production
