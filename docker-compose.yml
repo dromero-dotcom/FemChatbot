@@ -8,3 +8,15 @@ services:
       - '5055'
     depends_on:
       - rasa-production
+
+rasa_nlu:
+    image: rasa/rasa_nlu:latest-spacy
+    volumes:
+      - ./models/rasa_nlu:/app/models
+      - ./config:/app/config
+    command:
+      - start
+      - --path
+      - models
+      - -c
+      - config/nlu_config.yml
