@@ -27,7 +27,7 @@ class ActionGetTime(Action):
              tracker: Tracker,
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          current_time =  dt.datetime.now()
-         reply = "Where I am it's " + current_time.strftime("%#I:%M %p")
+         reply = "Where I am it's " + current_time.strftime("%I:%M %p").lstrip("0")
          dispatcher.utter_message(text = reply)
 
          return []
@@ -106,7 +106,12 @@ class ActionGetGPGUK(Action):
          dispatcher.utter_message(text = reply)
          # Need to reset all slots in case user wants to see a different company.
          return [AllSlotsReset()]
-     
+
+
+""" THIS SECTION CAN BE USED TO ASK AND STORE THE USER'S NAME.
+    THIS PART LEFT OUT OF SCOPE FOR FINAL VERSION OF CHATBOT,
+    DUE TO PRIVACY CONCERNS WHEN ASKING USERS TO TEST THE BOT.
+
 class ActionReceiveName(Action):
 # This class supports a custom action to receive the name of the user.
 # It populates the slot 'name' and keeps track of it during the conversation.
@@ -140,3 +145,4 @@ class ActionSayName(Action):
         else:
             dispatcher.utter_message(text=f"Your name is {name}!")
         return []        
+"""

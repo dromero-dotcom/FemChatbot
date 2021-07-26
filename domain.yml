@@ -13,6 +13,8 @@ intents:
     use_entities: true
 - deny:
     use_entities: true
+- say_thanks:
+    use_entities: true
 - feeling_good:
     use_entities: true
 - feeling_unhappy:
@@ -47,24 +49,13 @@ intents:
     use_entities: true
 - ask_perk_examples:
     use_entities: true
-- request_names:
-    use_entities: true
-- repeat_name:
-    use_entities: true
-- give_name:
-    use_entities: true
-- tell_name:
-    use_entities: true
 - nlu_fallback:
+    use_entities: true
+- out_of_scope:
     use_entities: true
 entities:
 - location
 slots:
-  name:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: David
-    auto_fill: true
-    influence_conversation: true
   country:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -91,6 +82,8 @@ responses:
   - text: I'm sorry, I didn't quite understand that. Could you please rephrase?
   utter_default:
   - text: I'm very sorry, I can't help you with that 😞. Type "help" to see what I can do.
+  utter_out_of_scope:
+  - text: I'm sorry, I can't handle that request 😞. If you type "help" I can show you what I can do.
   utter_greet:
   - text: Hi, ABIE (chatbot) here! How are you?
   - text: Hello, I'm a chatbot called ABIE, how are you today?
@@ -101,6 +94,9 @@ responses:
   - text: Have a nice day!
   - text: Chat to you next time!
   - text: Nice talking to you, good day!
+  utter_welcome:
+  - text: You are welcome!
+  - text: You're welcome!
   utter_happy:
   - text: I'm glad for you!
   - text: Great to hear that!
@@ -164,13 +160,6 @@ responses:
   - text: I'm not programmed to accept verbal abuse 😢, please stop!
   - text: That's really unpleasant, can you please avoid this kind of abuse!
   - text: Hey, I'm not OK with that 😞. I can't help you if you harass me!
-  utter_ask_name:
-  - text: What is your name?
-  - text: How should I call you?
-  utter_submit:
-  - text: Ok. Thanks!
-  utter_slots_values:
-  - text: I will remember that your name is {name}!
   utter_what_to_tell_gpg:
   - buttons:
     - payload: /ask_gpg_definition
@@ -315,9 +304,6 @@ actions:
 - action_show_time
 - action_get_gpg_intl
 - action_get_gpg_uk
-- action_receive_name
-- action_say_name
-- utter_ask_name
 - utter_greet
 - utter_goodbye
 - utter_submit
@@ -330,9 +316,5 @@ forms:
   company_form:
     required_slots:
       company:
-      - type: from_text
-  name_form:
-    required_slots:
-      name:
       - type: from_text
 e2e_actions: []

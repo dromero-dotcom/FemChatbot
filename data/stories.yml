@@ -34,42 +34,18 @@ stories:
   - action: utter_sorry
   - action: utter_ask_how_to_help
 
-- story: get user name
-  steps:
-  - intent: say_hello
-  - action: utter_greet
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: action_receive_name
-  - intent: repeat_name
-  - action: action_say_name
+# The next story was designed to ask for the user's name
+# and store, then repeat it. This was left out of scope
+# for the final version due to privacy concerns when testing
+# with external users.
 
-#- story: ask for salary negotiation tips
+#- story: get user name
 #  steps:
-#  - intent: ask_salary_nego_advice
-#  - action: utter_intro_tips
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_nego_tip_01
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_nego_tip_02
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_nego_tip_03
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_nego_tip_04
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_nego_tip_05
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_nego_tip_06
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_nego_tip_07
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_happy
+#  - intent: say_hello
+#  - action: utter_greet
+#  - intent: tell_name
+#  - action: utter_ask_name
+#  - intent: give_name
+#  - action: action_receive_name
+#  - intent: repeat_name
+#  - action: action_say_name

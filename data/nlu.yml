@@ -348,10 +348,9 @@ nlu:
     - no, thank you
     - no, thanks
     - no, thankyou
-    - no. u r idiot
+    - no u idiot
     - non
     - noooooooooo
-    - noooooooooooooooooooooooooooooooooooooooo
     - nop
     - nope!
     - nope. i am good
@@ -359,7 +358,6 @@ nlu:
     - not really
     - not right now
     - not yet
-    - nö
     - sorry not right now
     - still dont want to tell
     - thanks but no thanks
@@ -367,6 +365,50 @@ nlu:
     - stop it, i do not care!!!
     - none of them
     - I don't agree
+
+- intent: say_thanks
+  examples: |
+    - thanks!
+    - thanks
+    - Thanks
+    - thx
+    - THX
+    - thank you
+    - thanks a lot
+    - great thanks
+    - appreciate it
+    - cool thanks
+    - Cool. Thanks
+    - Great, thanks
+    - Thank you so much
+    - Thank's!
+    - Thanks bot
+    - Thanks for that
+    - Thanks!
+    - amazing, thanks
+    - cool thank you
+    - cool, thanks
+    - danke
+    - great thanks
+    - ok thanks
+    - ok thanks!
+    - perfect thank you
+    - thank u
+    - thank you
+    - thank you anyways
+    - thanks
+    - thanks a lot
+    - thanks for the help
+    - thanks you
+    - thanks!
+    - thankyou
+    - thnks
+    - yes thanks
+    - thanks for your information
+    - thanks abie
+    - thanks ABIE
+    - thank you abie
+    - thank you ABIE
 
 - intent: feeling_good
   examples: |
@@ -495,6 +537,7 @@ nlu:
     - am I talking to a human?
     - who are you?
     - what is your name?
+    - what's your name
     - tell me your name
     - tell me who you are
     - what do I call you?
@@ -1043,33 +1086,53 @@ nlu:
     - show me about perks
     - show me negotiate other perks
 
-- intent: request_names
+- intent: out_of_scope
   examples: |
-    - i want to tell you my name
-    - give name
-    - do you know my name?
-    - you need to know my name
-    - ill give you my name
-    - do you want to know my name?
-    - i wanna give my name
-    - I want to tell you my name
+    - what is the weather
+    - what is rasa
+    - I want to know the weather
+    - what is the meaning of life.
+    - I want a pizza
+    - what year is it
+    - what day is today
+    - order a pizza
+    - I want to order a pizza
+    - what is the weather today
+    - what is the weather
+    - how old are you?
+    - how about the forecast
+    - make a joke
+    - Can I get a hamburger?
+    - Can you please send me an uber
+    - do you know my name
+    - do you know who I am
+    - who am I?
 
-- intent: repeat_name
-  examples: |
-    - what is my name
-    - tell me my name
-    - show you know my name
-    - repeat my name
-    - say my name
-    - what's my name
-
-- intent: give_name
-  examples: |
-    - david
-    - felicity
-    - yasmin
-    - gina
-    - carlos
-    - john
-    - mary
-    - claire
+#These examples are out of scope due to privacy concerns
+#- intent: request_names
+#  examples: |
+#    - i want to tell you my name
+#    - give name
+#    - do you know my name?
+#    - you need to know my name
+#    - ill give you my name
+#    - do you want to know my name?
+#    - i wanna give my name
+#    - I want to tell you my name
+#- intent: repeat_name
+#  examples: |
+#    - what is my name
+#    - tell me my name
+#    - show you know my name
+#    - repeat my name
+#    - say my name
+#    - what's my name
+#- intent: give_name
+#  examples: |
+#    - david
+#    - felicity
+#    - yasmin
+#    - gina
+#    - carlos
+#    - john
+#    - mary
