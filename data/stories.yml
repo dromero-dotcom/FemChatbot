@@ -38,7 +38,6 @@ stories:
 # and store, then repeat it. This was left out of scope
 # for the final version due to privacy concerns when testing
 # with external users.
-
 #- story: get user name
 #  steps:
 #  - intent: say_hello

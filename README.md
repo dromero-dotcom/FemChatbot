@@ -8,4 +8,4 @@ ABIE can also "defend" itself from sexist and abusive input from users; it will 
 As a minor feature, the chatbot can also give the current time at its location, if asked for it.
 
 Dissertation project for the MSc in Computer Science, University of Warwick, 2020-2021.
-This chatbot was developed using RASA OpenSource 2.7.1, RASA-X 0.40.1, RASA-SDK 2.7.0. and Python 3.7.6.
+This chatbot was developed using RASA OpenSource 2.7.1, RASA-X 0.40.1, RASA-SDK 2.7.0., spaCy 3.1 and Python 3.7.6.

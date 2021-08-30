@@ -1107,6 +1107,7 @@ nlu:
     - do you know my name
     - do you know who I am
     - who am I?
+    - can you order a taxi
 
 #These examples are out of scope due to privacy concerns
 #- intent: request_names
@@ -1132,7 +1133,3 @@ nlu:
 #    - david
 #    - felicity
 #    - yasmin
-#    - gina
-#    - carlos
-#    - john
-#    - mary

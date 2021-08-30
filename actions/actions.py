@@ -1,9 +1,7 @@
 # This file contains custom actions for the chatbot ABIE.
 # It runs custom Python code in conjunction with Rasa Open Source.
-#
-# Feminist Chatbot ABIE, Version 2.1
 # Created by David Romero, MSc Student- University of Warwick
-# July 2021.
+# Feminist Chatbot ABIE, Version 3.2, August 2021.
 
 from typing import Any, Text, Dict, List
 from rasa_sdk.events import SlotSet, AllSlotsReset
